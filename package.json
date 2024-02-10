@@ -1,20 +1,48 @@
 {
-  "name": "regular-raspberry",
+  "name": "gabrielcaiana-blog",
   "type": "module",
   "version": "0.0.1",
+  "author": {
+    "name": "Gabriel Caiana",
+    "email": "gabrielcaianaguedes@gmail.com"
+  },
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro check && astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "format": "prettier --write . --plugin=prettier-plugin-astro",
+    "format:check": "prettier --check . --plugin=prettier-plugin-astro",
+    "lint": "eslint .",
+    "prepare": "husky install"
   },
   "dependencies": {
+    "@astrojs/check": "^0.5.2",
     "@astrojs/mdx": "^2.1.1",
     "@astrojs/rss": "^4.0.5",
     "@astrojs/sitemap": "^3.0.5",
-    "astro": "^4.3.5",
-    "@astrojs/check": "^0.5.2",
+    "astro": "^4.3.5"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^18.6.0",
+    "@commitlint/config-conventional": "^18.6.0",
+    "@typescript-eslint/parser": "^6.21.0",
+    "astro-eslint-parser": "^0.16.3",
+    "eslint": "^8.56.0",
+    "eslint-plugin-astro": "^0.31.4",
+    "husky": "^9.0.10",
+    "lint-staged": "^15.2.2",
+    "postcss-html": "^1.6.0",
+    "prettier": "^3.2.5",
+    "prettier-plugin-astro": "^0.13.0",
+    "stylelint-config-html": "^1.1.0",
     "typescript": "^5.3.3"
+  },
+  "extends": "stylelint-config-html",
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx,md,mdx,json,astro}": [
+      "prettier --write --plugin=prettier-plugin-astro"
+    ]
   }
 }
