@@ -1,5 +1,5 @@
 ---
-title: "Entendendo as 10 Heurísticas de Nielsen para melhorar a experiência do usuário"
+title: "Entendendo as 10 Heurísticas de Nielsen"
 description: "As 10 Heurísticas de Nielsen foram criadas em 1994 pelo cientista da computação Jakob Nielsen, também conhecido como o pai da usabilidade. Ao lado de Don Norman, ele criou posteriormente a Nielsen Norman Group, renomada empresa americana de consultoria em interface e experiência de usuário."
 pubDate: "Jul 08 2022"
 heroImage: "/articles/02-heuristic-nielsen/heuristic-nielsen.png"
