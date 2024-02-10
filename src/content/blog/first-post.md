@@ -1,16 +1,73 @@
 ---
-title: "First post"
-description: "Lorem ipsum dolor sit amet"
+title: "O que são micro frontends"
+description: "O termo Micro Frontends surgiu pela primeira vez no ThoughtWorks Technology Radar no final de 2016. Ele estende os conceitos de microsserviços para o mundo do frontend."
 pubDate: "Jul 08 2022"
-heroImage: "/blog-placeholder-3.jpg"
+heroImage: "/articles/01-microfrontends/example-microfrontends.png"
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vitae ultricies leo integer malesuada nunc vel risus commodo viverra. Adipiscing enim eu turpis egestas pretium. Euismod elementum nisi quis eleifend quam adipiscing. In hac habitasse platea dictumst vestibulum. Sagittis purus sit amet volutpat. Netus et malesuada fames ac turpis egestas. Eget magna fermentum iaculis eu non diam phasellus vestibulum lorem. Varius sit amet mattis vulputate enim. Habitasse platea dictumst quisque sagittis. Integer quis auctor elit sed vulputate mi. Dictumst quisque sagittis purus sit amet.
+O termo Micro Frontends surgiu pela primeira vez no ThoughtWorks Technology Radar no final de 2016. Ele estende os conceitos de microsserviços para o mundo do frontend. A tendência atual é construir um aplicativo de navegador poderoso e rico em recursos, também conhecido como aplicativo de página única, que se baseia em uma arquitetura de microsserviço. Com o tempo, a camada de front-end, geralmente desenvolvida por uma equipe separada, cresce e fica mais difícil de manter. Isso é o que chamamos de Monólito de Frontend.
 
-Morbi tristique senectus et netus. Id semper risus in hendrerit gravida rutrum quisque non tellus. Habitasse platea dictumst quisque sagittis purus sit amet. Tellus molestie nunc non blandit massa. Cursus vitae congue mauris rhoncus. Accumsan tortor posuere ac ut. Fringilla urna porttitor rhoncus dolor. Elit ullamcorper dignissim cras tincidunt lobortis. In cursus turpis massa tincidunt dui ut ornare lectus. Integer feugiat scelerisque varius morbi enim nunc. Bibendum neque egestas congue quisque egestas diam. Cras ornare arcu dui vivamus arcu felis bibendum. Dignissim suspendisse in est ante in nibh mauris. Sed tempus urna et pharetra pharetra massa massa ultricies mi.
+A ideia por trás do Micro Frontends é pensar em um site ou aplicativo da web como uma composição de recursos pertencentes a equipes independentes . Cada equipe tem uma área de negócio ou missão distinta com a qual se preocupa e se especializa. Uma equipe é multifuncional e desenvolve seus recursos de ponta a ponta , do banco de dados à interface do usuário.
 
-Mollis nunc sed id semper risus in. Convallis a cras semper auctor neque. Diam sit amet nisl suscipit. Lacus viverra vitae congue eu consequat ac felis donec. Egestas integer eget aliquet nibh praesent tristique magna sit amet. Eget magna fermentum iaculis eu non diam. In vitae turpis massa sed elementum. Tristique et egestas quis ipsum suspendisse ultrices. Eget lorem dolor sed viverra ipsum. Vel turpis nunc eget lorem dolor sed viverra. Posuere ac ut consequat semper viverra nam. Laoreet suspendisse interdum consectetur libero id faucibus. Diam phasellus vestibulum lorem sed risus ultricies tristique. Rhoncus dolor purus non enim praesent elementum facilisis. Ultrices tincidunt arcu non sodales neque. Tempus egestas sed sed risus pretium quam vulputate. Viverra suspendisse potenti nullam ac tortor vitae purus faucibus ornare. Fringilla urna porttitor rhoncus dolor purus non. Amet dictum sit amet justo donec enim.
+## Exemplo de frontends monolíticos
 
-Mattis ullamcorper velit sed ullamcorper morbi tincidunt. Tortor posuere ac ut consequat semper viverra. Tellus mauris a diam maecenas sed enim ut sem viverra. Venenatis urna cursus eget nunc scelerisque viverra mauris in. Arcu ac tortor dignissim convallis aenean et tortor at. Curabitur gravida arcu ac tortor dignissim convallis aenean et tortor. Egestas tellus rutrum tellus pellentesque eu. Fusce ut placerat orci nulla pellentesque dignissim enim sit amet. Ut enim blandit volutpat maecenas volutpat blandit aliquam etiam. Id donec ultrices tincidunt arcu. Id cursus metus aliquam eleifend mi.
+<img src="/articles/01-microfrontends/frontend-monoliticos.png" alt="frontend monolíticos" />
 
-Tempus quam pellentesque nec nam aliquam sem. Risus at ultrices mi tempus imperdiet. Id porta nibh venenatis cras sed felis eget velit. Ipsum a arcu cursus vitae. Facilisis magna etiam tempor orci eu lobortis elementum. Tincidunt dui ut ornare lectus sit. Quisque non tellus orci ac. Blandit libero volutpat sed cras. Nec tincidunt praesent semper feugiat nibh sed pulvinar proin gravida. Egestas integer eget aliquet nibh praesent tristique magna.
+## Exemplo de times com organização em verticais
+
+<img src="/articles/01-microfrontends/teams-microfronend.png" alt="times com organização em verticais" />
+
+## Quais são os principais benefícios de utilizar esse tipo de arquitetura
+
+1. Independência de framework.
+2. Códigos mais fáceis de serem testados.
+3. Responsabilidade única.
+4. Deploys independentes.
+5. Maior escalabilidade.
+6. Uma forma de evoluir frontends legados.
+7. Possibilidades de upgrade, update e reescrita de pequenas partes.
+8. Códigos menores e mais coesos.
+
+## E quais dificuldades podemos encontrar ao utilizar os micro frontends
+
+1. Tamanho da aplicação e do payload
+2. Complexidade
+3. Responsabilidade compartilhada
+4. Testes E2E
+5. Manter o style da aplicação
+
+## Estratégias para aplicar os micro frontends
+
+1. Server Side
+2. Iframes
+3. Run-time com frameworks javascript
+4. Run-time com web components
+
+## Boas práticas de utilização
+
+### Autonomia tecnológica
+
+Cada time deve ser capaz de escolher e atualizar sua stack tecnologica de forma independente.
+
+### Código isolado
+
+O código de cada time deve ser isolado e auto-contido, sem estados compartilhados ou variáveis globais.
+
+### Nomeclaturas pré-estabelecidas
+
+Onde a ideia 2 não for aplicada, deve haver uma convenção na nomeclatura de local storage, cookies, eventos e outros recursos para evitar conflitos.
+
+### referência a recursos nativos do browser
+
+Favoreça recursos nativos do browser ao invés de API customizadas para realizar a comunicação entre os serviços
+
+### Resiliência
+
+A feature desenvolvida deve ser resiliente e utilizável mesmo que haja problemas ao carregar o código javascript.(ssr)
+
+### Resumo
+
+Utilizar micro frontends pode ser uma ótima opção, mas isso vai depender muito com contexto e maturidade dos times, então é importante avaliar se realmente é o momento certo para isso, e se faz sentido.
+
+Para obter mais conteúdos eu recomendo a leitura do site [MicroFrontends.org](https://micro-frontends.org/).
+
