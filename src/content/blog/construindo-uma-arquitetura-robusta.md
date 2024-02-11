@@ -1,7 +1,7 @@
 ---
 title: "Construindo uma Arquitetura Robustas"
 description: "Explore uma Arquitetura de Software com Características Estruturais de Destaque - Configurável, Extensível e de Fácil Instalação. Otimize seu desenvolvimento com reuso de componentes, internacionalização e suporte eficaz. Garanta flexibilidade e robustez para o seu projeto. Descubra mais agora!"
-pubDate: "Jan 11 2024"
+pubDate: "Jan 10 2024"
 heroImage: "/articles/03-construindo-arquitetura-robusta/hero.png"
 ---
 
