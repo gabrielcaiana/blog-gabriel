@@ -70,4 +70,3 @@ A feature desenvolvida deve ser resiliente e utilizável mesmo que haja problema
 Utilizar micro frontends pode ser uma ótima opção, mas isso vai depender muito com contexto e maturidade dos times, então é importante avaliar se realmente é o momento certo para isso, e se faz sentido.
 
 Para obter mais conteúdos eu recomendo a leitura do site [MicroFrontends.org](https://micro-frontends.org/).
-

@@ -64,4 +64,3 @@ Essas heurísticas podem ser aplicadas em protótipo de papel, wireframe ou prod
 Quer se aprofundar mais sobre o assunto?
 
 Acesse o site [Nielsen Norman Group](https://www.nngroup.com/articles/ten-usability-heuristics/) e veja mais conteúdos relacionados as heurísticas de Nielsen.
-
