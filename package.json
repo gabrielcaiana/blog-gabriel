@@ -1,7 +1,7 @@
 {
   "name": "gabrielcaiana-blog",
   "type": "module",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "author": {
     "name": "Gabriel Caiana",
     "email": "gabrielcaianaguedes@gmail.com"
@@ -15,13 +15,17 @@
     "format": "prettier --write . --plugin=prettier-plugin-astro",
     "format:check": "prettier --check . --plugin=prettier-plugin-astro",
     "lint": "eslint .",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "changeset": "changeset",
+    "version-packages": "changeset version",
+    "release": "astro check && astro build && changeset publish"
   },
   "dependencies": {
     "@astrojs/check": "^0.5.2",
     "@astrojs/mdx": "^2.1.1",
     "@astrojs/rss": "^4.0.5",
     "@astrojs/sitemap": "^3.0.5",
+    "@changesets/cli": "^2.27.1",
     "astro": "^4.3.5"
   },
   "devDependencies": {
