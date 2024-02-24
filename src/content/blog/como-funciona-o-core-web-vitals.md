@@ -5,7 +5,7 @@ pubDate: "Feb 24 2024"
 heroImage: "/articles/06-como-funciona-o-core-webvitals/hero.png"
 ---
 
-Core Web Vitals são uma série de métricas que o Google considera importantes para a experiência do usuário na web. Essas métricas abordam aspectos essenciais da experiência do usuário, como velocidade de carregamento, interatividade e estabilidade visual do conteúdo da página.
+**Core Web Vitals** são uma série de métricas que o Google considera importantes para a experiência do usuário na web. Essas métricas abordam aspectos essenciais da experiência do usuário, como velocidade de carregamento, interatividade e estabilidade visual do conteúdo da página.
 
 - **Largest Contentful Paint (LCP)**: Esta métrica mede o tempo que leva para o maior conteúdo da página ser visível para o usuário. Um bom LCP é considerado qualquer coisa abaixo de 2,5 segundos.
 - **First Input Delay (FID)**: FID mede o tempo entre a primeira interação do usuário (como clicar em um link) e o navegador realmente ser capaz de começar a processar essa interação. Um bom FID é menor que 100 milissegundos.
@@ -21,4 +21,4 @@ A relevância do conteúdo é outra área importante a ser focada. O conteúdo d
 
 Além disso, a velocidade do site é um fator crucial na experiência do usuário. Um site lento pode frustrar os usuários e fazer com que eles saiam do seu site. Portanto, é importante monitorar e otimizar o tempo de carregamento do site.
 
-Em resumo, ao otimizar o Core Web Vitals e outros fatores importantes, você pode melhorar a experiência do usuário em seu site.
+Em resumo, ao otimizar o **Core Web Vitals** e outros fatores importantes, você pode melhorar a experiência do usuário em seu site.
