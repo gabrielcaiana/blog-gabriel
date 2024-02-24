@@ -9,7 +9,7 @@ import ViewTransitions from "astro/components/ViewTransitions.astro";
 
 const posts = (await getCollection("blog")).sort(
   (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
-);
+).slice(0, 4);
 ---
 
 <!doctype html>
@@ -20,13 +20,26 @@ const posts = (await getCollection("blog")).sort(
     <ViewTransitions />
 
     <style>
+      .posts-wrapper-title {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0 0 2rem;
+      }
+      .posts-wrapper-title a {
+        text-decoration: none;
+        font-weight: 600;
+        color: var(--black);
+      }
+      .posts-wrapper-title a:hover {
+        color: var(--accent);
+      }
       .posts {
         max-width: 760px;
         margin: 0 auto;
         padding: 60px 20px;
       }
       .posts h2 {
-        margin: 0 0 2rem;
         font-size: 1.8em;
         color: rgb(var(--black));
       }
@@ -110,7 +123,10 @@ const posts = (await getCollection("blog")).sort(
     </main>
 
     <section class="posts">
-      <h2>✍️ Artigos</h2>
+      <div class="posts-wrapper-title">
+        <h2>✍️ Artigos</h2>
+        <a href="/blog">Visualizar todos</a>
+      </div>
       <ul>
         {
           posts.map(post => (
