@@ -43,6 +43,10 @@ const { title, description, image = "/thumbnail.png" } = Astro.props;
 <!-- Canonical URL -->
 <link rel="canonical" href={canonicalURL} />
 
+
+<!-- preconnect -->
+<link rel="preconnect" href="https://www.clarity.ms" crossorigin>
+
 <!-- Primary Meta Tags -->
 <title>{title}</title>
 <meta name="title" content={title} />
