@@ -24,7 +24,16 @@ jobs:
           webhook_token: ${{ secrets.DISCORD_WEBHOOK_TOKEN }}
           color: "#48f442"
           username: "Blog Pessoal - Bot"
-          message: "🎉 Novo Pull request aberto!\n\n**${{ github.event.pull_request.title }}**\n\n${{ github.event.pull_request.body }}."
+          message: |
+            🎉 Novo Pull request aberto!
+            **${{ github.event.pull_request.title }}**
+            ${{ github.event.pull_request.body }}
+            [Repositório](${{
+              github.event.repository.html_url
+            }})
+            [Pull Request](${{
+              github.event.pull_request.html_url
+            }})
 
       - name: Send message for merge to master
         if: github.event_name == 'push'
@@ -34,4 +43,13 @@ jobs:
           webhook_token: ${{ secrets.DISCORD_WEBHOOK_TOKEN }}
           color: "#48f442"
           username: "Blog Pessoal - Bot"
-          message: "🚀 Pull request mesclado na master!\n\n**${{ github.event.head_commit.message }}**\n\n${{ github.event.head_commit.author.name }}."
+          message: |
+            🚀 Pull request mesclado na master!
+            **${{ github.event.head_commit.message }}**
+            Autor: ${{ github.event.head_commit.author.name }}
+            [Repositório](${{
+              github.event.repository.html_url
+            }})
+            [Pull Request](${{
+              github.event.head_commit.url
+            }})
