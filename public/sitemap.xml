@@ -4,49 +4,66 @@
       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
-
 
 <url>
   <loc>https://gabrielcaiana.com/</loc>
   <lastmod>2024-02-24T02:55:37+00:00</lastmod>
   <priority>1.00</priority>
+  <changefreq>weekly</changefreq>
 </url>
 <url>
   <loc>https://gabrielcaiana.com/blog/</loc>
   <lastmod>2024-02-24T02:55:37+00:00</lastmod>
-  <priority>0.80</priority>
+  <priority>0.85</priority>
+  <changefreq>weekly</changefreq>
 </url>
 <url>
   <loc>https://gabrielcaiana.com/about/</loc>
   <lastmod>2024-02-24T02:55:37+00:00</lastmod>
-  <priority>0.80</priority>
+  <priority>0.85</priority>
+  <changefreq>monthly</changefreq>
 </url>
 <url>
   <loc>https://gabrielcaiana.com/blog/construindo-uma-arquitetura-robusta/</loc>
   <lastmod>2024-02-24T02:55:37+00:00</lastmod>
   <priority>0.80</priority>
+  <changefreq>yearly</changefreq>
 </url>
 <url>
   <loc>https://gabrielcaiana.com/blog/entendendo-as-10-heuristicas-de-nielsen/</loc>
   <lastmod>2024-02-24T02:55:37+00:00</lastmod>
   <priority>0.80</priority>
+  <changefreq>yearly</changefreq>
 </url>
 <url>
   <loc>https://gabrielcaiana.com/blog/metricas-para-medir-performance-em-software/</loc>
   <lastmod>2024-02-24T02:55:37+00:00</lastmod>
   <priority>0.80</priority>
+  <changefreq>yearly</changefreq>
 </url>
 <url>
   <loc>https://gabrielcaiana.com/blog/nuxt-webpack-analyze/</loc>
   <lastmod>2024-02-24T02:55:37+00:00</lastmod>
   <priority>0.80</priority>
+  <changefreq>yearly</changefreq>
 </url>
 <url>
   <loc>https://gabrielcaiana.com/blog/oque-e-micro-frontends/</loc>
   <lastmod>2024-02-24T02:55:37+00:00</lastmod>
   <priority>0.80</priority>
+  <changefreq>yearly</changefreq>
 </url>
-
+<url>
+  <loc>https://gabrielcaiana.com/blog/componentes-para-debug-e-renderizacao-com-devonly-e-clientonly-no-nuxt-3/</loc>
+  <lastmod>2024-08-31T02:55:37+00:00</lastmod>
+  <priority>0.80</priority>
+  <changefreq>yearly</changefreq>
+</url>
+<url>
+  <loc>https://gabrielcaiana.com/blog/como-manter-estado-componentes-entre-rotas-keepalive-nuxt-3/</loc>
+  <lastmod>2024-08-26T02:55:37+00:00</lastmod>
+  <priority>0.80</priority>
+  <changefreq>yearly</changefreq>
+</url>
 
 </urlset>

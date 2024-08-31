@@ -3,5 +3,6 @@ Disallow: /cgi-bin/
 Disallow: /tmp/
 Disallow: /private/
 Disallow: /backend/
+Allow: /
 
 Sitemap: https://gabrielcaiana.com/sitemap.xml
