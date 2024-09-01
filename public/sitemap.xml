@@ -65,5 +65,11 @@
   <priority>0.80</priority>
   <changefreq>yearly</changefreq>
 </url>
+<url>
+  <loc>https://gabrielcaiana.com/blog/integracao-github-discord-notificacoes-pull-requests/</loc>
+  <lastmod>2024-08-26T02:55:37+00:00</lastmod>
+  <priority>0.80</priority>
+  <changefreq>yearly</changefreq>
+</url>
 
 </urlset>
