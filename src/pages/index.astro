@@ -8,10 +8,9 @@ import FormattedDate from "../components/FormattedDate.astro";
 import ViewTransitions from "astro/components/ViewTransitions.astro";
 
 const posts = (await getCollection("blog")).sort(
-  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+  (a: any, b: any) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
 ).slice(0, 4);
 ---
-
 <!doctype html>
 <html lang="en">
   <head>
@@ -130,7 +129,7 @@ const posts = (await getCollection("blog")).sort(
       </div>
       <ul>
         {
-          posts.map(post => (
+          posts.map((post: any) => (
             <li>
               <a href={`/blog/${post.slug}/`} title={post.slug}>
                 <img

@@ -7,7 +7,7 @@
     "email": "gabrielcaianaguedes@gmail.com"
   },
   "scripts": {
-    "dev": "astro dev",
+    "dev": "astro dev --host",
     "start": "astro dev",
     "build": "astro check && astro build",
     "preview": "astro preview",
@@ -23,6 +23,7 @@
   "dependencies": {
     "@astrojs/check": "^0.5.10",
     "@astrojs/mdx": "^2.3.1",
+    "@astrojs/node": "^8.3.4",
     "@astrojs/rss": "^4.0.7",
     "@astrojs/sitemap": "^3.2.1",
     "@changesets/cli": "^2.27.7",
