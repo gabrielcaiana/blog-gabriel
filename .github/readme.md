@@ -1,27 +1,6 @@
-# Personal Blog
+# Blog | Gabriel Caiana
 
-Features:
-- ✅ Minimal styling (make it your own!)
-- ✅ 100/100 Lighthouse performance
-- ✅ SEO-friendly with canonical URLs and OpenGraph data
-- ✅ Sitemap support
-- ✅ RSS Feed support
-- ✅ Markdown & MDX support
-
-## 🚀 Project Structure
-
-```text
-├── public/
-├── src/
-│   ├── components/
-│   ├── content/
-│   ├── layouts/
-│   └── pages/
-├── astro.config.mjs
-├── README.md
-├── package.json
-└── tsconfig.json
-```
+<img src ="./preview.png" />
 
 ## 🧞 Commands
 
@@ -47,7 +26,7 @@ docker run -d -p 4321:4321 my-blog
 build docker compose
 
 ```bash
-docker compose build 
+docker compose build
 ```
 
 run docker compose
