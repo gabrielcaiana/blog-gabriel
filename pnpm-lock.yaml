@@ -13,10 +13,10 @@ importers:
         version: 0.5.10(prettier-plugin-astro@0.13.0)(prettier@3.4.2)(typescript@5.7.2)
       '@astrojs/mdx':
         specifier: ^2.3.1
-        version: 2.3.1(astro@4.16.17(@types/node@22.9.3)(rollup@4.27.4)(typescript@5.7.2))
+        version: 2.3.1(astro@4.16.18(@types/node@22.9.3)(rollup@4.27.4)(typescript@5.7.2))
       '@astrojs/node':
         specifier: ^8.3.4
-        version: 8.3.4(astro@4.16.17(@types/node@22.9.3)(rollup@4.27.4)(typescript@5.7.2))
+        version: 8.3.4(astro@4.16.18(@types/node@22.9.3)(rollup@4.27.4)(typescript@5.7.2))
       '@astrojs/rss':
         specifier: ^4.0.10
         version: 4.0.10
@@ -27,8 +27,8 @@ importers:
         specifier: ^2.27.10
         version: 2.27.10
       astro:
-        specifier: ^4.16.17
-        version: 4.16.17(@types/node@22.9.3)(rollup@4.27.4)(typescript@5.7.2)
+        specifier: ^4.16.18
+        version: 4.16.18(@types/node@22.9.3)(rollup@4.27.4)(typescript@5.7.2)
     devDependencies:
       '@commitlint/cli':
         specifier: ^18.6.1
@@ -1066,8 +1066,8 @@ packages:
     resolution: {integrity: sha512-CGaBseNtunAV2DCpwBXqTKq8+9Tw65XZetMaC0FsMoZuLj0gxNIkbCf2QyKYScVrNOU7/ayfNdVw8ZCSHBiqCg==}
     engines: {node: ^14.18.0 || >=16.0.0}
 
-  astro@4.16.17:
-    resolution: {integrity: sha512-OuD+BP7U6OqQLKtZ/FJkU2S+TOlifxS/OKUbZOb5p6y+LLBa1J3zHRJrIl7DUSq6eXY+9wSWwbJpD9JS+lqhxA==}
+  astro@4.16.18:
+    resolution: {integrity: sha512-G7zfwJt9BDHEZwlaLNvjbInIw2hPryyD654314KV/XT34pJU6SfN1S+mWa8RAkALcZNJnJXCJmT3JXLQStD3Lw==}
     engines: {node: ^18.17.1 || ^20.3.0 || >=21.0.0, npm: '>=9.6.5', pnpm: '>=7.1.0'}
     hasBin: true
 
@@ -3705,12 +3705,12 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@astrojs/mdx@2.3.1(astro@4.16.17(@types/node@22.9.3)(rollup@4.27.4)(typescript@5.7.2))':
+  '@astrojs/mdx@2.3.1(astro@4.16.18(@types/node@22.9.3)(rollup@4.27.4)(typescript@5.7.2))':
     dependencies:
       '@astrojs/markdown-remark': 5.1.0
       '@mdx-js/mdx': 3.1.0(acorn@8.14.0)
       acorn: 8.14.0
-      astro: 4.16.17(@types/node@22.9.3)(rollup@4.27.4)(typescript@5.7.2)
+      astro: 4.16.18(@types/node@22.9.3)(rollup@4.27.4)(typescript@5.7.2)
       es-module-lexer: 1.5.4
       estree-util-visit: 2.0.0
       github-slugger: 2.0.0
@@ -3726,9 +3726,9 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@astrojs/node@8.3.4(astro@4.16.17(@types/node@22.9.3)(rollup@4.27.4)(typescript@5.7.2))':
+  '@astrojs/node@8.3.4(astro@4.16.18(@types/node@22.9.3)(rollup@4.27.4)(typescript@5.7.2))':
     dependencies:
-      astro: 4.16.17(@types/node@22.9.3)(rollup@4.27.4)(typescript@5.7.2)
+      astro: 4.16.18(@types/node@22.9.3)(rollup@4.27.4)(typescript@5.7.2)
       send: 0.19.1
       server-destroy: 1.0.1
     transitivePeerDependencies:
@@ -4803,7 +4803,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  astro@4.16.17(@types/node@22.9.3)(rollup@4.27.4)(typescript@5.7.2):
+  astro@4.16.18(@types/node@22.9.3)(rollup@4.27.4)(typescript@5.7.2):
     dependencies:
       '@astrojs/compiler': 2.10.3
       '@astrojs/internal-helpers': 0.4.1
