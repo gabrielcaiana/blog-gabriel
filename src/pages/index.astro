@@ -14,14 +14,96 @@ const posts = (await getCollection("blog"))
   .slice(0, 4);
 ---
 
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 
     <ViewTransitions />
-
+    
     <style>
+      .about-section {
+        max-width: 760px;
+        margin: 0 auto;
+        padding: 60px 20px;
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+        flex-direction: row-reverse;
+      }
+      
+      .about-image {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        overflow: hidden;
+        box-shadow: var(--box-shadow);
+      }
+      
+      .about-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      
+      .about-content {
+        flex: 1;
+      }
+      
+      .about-content h1 {
+        font-size: 2.5rem;
+        margin: 0 0 0.5rem 0;
+        color: var(--text-heading);
+      }
+      
+      .about-content h2 {
+        font-size: 1.5rem;
+        margin: 0 0 1rem 0;
+        color: var(--accent);
+      }
+      
+      .about-content p {
+        font-size: 1.1rem;
+        line-height: 1.6;
+        color: var(--text);
+        margin-bottom: 1.5rem;
+      }
+      
+      .social-links {
+        display: flex;
+        gap: 1rem;
+        margin-top: 1rem;
+      }
+      
+      .social-links a {
+        color: var(--text);
+        transition: color 0.3s ease;
+      }
+      
+      .social-links a:hover {
+        color: var(--accent);
+      }
+      
+      .social-links svg {
+        width: 24px;
+        height: 24px;
+      }
+      
+      @media (max-width: 768px) {
+        .about-section {
+          flex-direction: column;
+          text-align: center;
+        }
+        
+        .about-image {
+          margin: 0 auto;
+        }
+        
+        .social-links {
+          justify-content: center;
+        }
+      }
+      
       .posts-wrapper-title {
         display: flex;
         justify-content: space-between;
@@ -102,28 +184,60 @@ const posts = (await getCollection("blog"))
   </head>
   <body>
     <Header />
-    <!-- <main>
-      <h1>🧑‍🚀 Olá, visitante!</h1>
-      <p>
-        Bem-vindo ao meu blog! Sou um apaixonado engenheiro de software
-        especializado em desenvolvimento frontend. Minha jornada profissional é
-        centrada no ecossistema Vue.js e Nuxt.js, onde busco criar experiências
-        web robustas e eficientes.
-      </p>
-      <p>
-        Fique à vontade para explorar os artigos e tutoriais, e espero que você
-        encontre inspiração e conhecimento útil para aprimorar seus projetos de
-        frontend!
-      </p>
-      <p>
-        Com anos de experiência na construção de interfaces de usuário dinâmicas
-        e responsivas, estou constantemente explorando novas técnicas e
-        ferramentas para aprimorar minhas habilidades. Este blog é meu espaço
-        para compartilhar insights, dicas e boas práticas relacionadas ao
-        desenvolvimento frontend, especialmente com um enfoque especial em
-        Vue.js e Nuxt.js.
-      </p>
-    </main> -->
+    
+    <section class="about-section">
+      <div class="about-image">
+        <img src="https://avatars.githubusercontent.com/gabrielcaiana" alt="Gabriel Caiana" />
+      </div>
+      <div class="about-content">
+        <h1>Gabriel Caiana</h1>
+        <h2>Software Engineer</h2>
+        <p>
+          Construindo experiências web de alta performance com Vue, Nuxt e TypeScript. Especializado em arquiteturas escaláveis e otimização de performance. Transformando ideias em produtos digitais que impactam milhões de usuários.
+        </p>
+        <div class="social-links">
+          <a
+            href="https://twitter.com/gabriel_caiana"
+            target="_blank"
+            title="link para me seguir no twitter"
+          >
+            <span class="sr-only">Me siga no twitter</span>
+            <svg viewBox="0 0 16 16" aria-hidden="true" width="24" height="24"
+              ><path
+                fill="currentColor"
+                d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"
+              ></path></svg
+            >
+          </a>
+          <a
+            href="https://github.com/gabrielcaiana"
+            target="_blank"
+            title="link para me seguir no github"
+          >
+            <span class="sr-only">Me siga no Github</span>
+            <svg viewBox="0 0 16 16" aria-hidden="true" width="24" height="24"
+              ><path
+                fill="currentColor"
+                d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"
+              ></path></svg
+            >
+          </a>
+          <a
+            href="https://www.linkedin.com/in/gabrielcaiana"
+            target="_blank"
+            title="link para me seguir no LinkedIn"
+          >
+            <span class="sr-only">Me siga no LinkedIn</span>
+            <svg viewBox="0 0 16 16" aria-hidden="true" width="24" height="24">
+              <path
+                fill="currentColor"
+                d="M0 1.146C0 .513.324 0 .725 0h14.55c.401 0 .725.513.725 1.146v13.708c0 .633-.324 1.146-.725 1.146H.725A.723.723 0 0 1 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.356-.554 1.356-1.248-.015-.71-.519-1.248-1.341-1.248-.822 0-1.356.538-1.356 1.248 0 .694.519 1.248 1.326 1.248h.015zm4.908 8.212V9.359c0-.216.015-.432.08-.586.174-.432.571-.878 1.237-.878.872 0 1.22.662 1.22 1.633v4.866h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.28 0-1.85.71-2.165 1.216h.015V6.169H6.542c.03.554 0 7.225 0 7.225h2.401z"
+              ></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
 
     <section class="posts">
       <div class="posts-wrapper-title">

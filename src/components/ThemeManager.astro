@@ -1,0 +1,43 @@
+---
+// Este componente gerencia o tema durante as transições de página
+---
+
+<!-- Script inline para aplicar o tema antes do HTML ser renderizado -->
+<script is:inline>
+  // Aplicar o tema imediatamente para evitar flash de conteúdo
+  (function() {
+    // Definir o tema padrão como dark
+    const theme = localStorage.getItem('theme') || 'dark';
+    
+    if (theme === 'dark') {
+      document.documentElement.setAttribute('data-theme', 'dark');
+    }
+  })();
+</script>
+
+<!-- Script global para gerenciar o tema -->
+<script>
+  // Função para aplicar o tema
+  function applyTheme() {
+    // Definir o tema padrão como dark
+    const theme = localStorage.getItem('theme') || 'dark';
+    
+    if (theme === 'dark') {
+      document.documentElement.setAttribute('data-theme', 'dark');
+    } else {
+      document.documentElement.removeAttribute('data-theme');
+    }
+  }
+
+  // Aplicar o tema após o carregamento do DOM
+  document.addEventListener('DOMContentLoaded', applyTheme);
+  
+  // Aplicar o tema após cada transição de página
+  document.addEventListener('astro:page-load', applyTheme);
+  
+  // Aplicar o tema durante a transição de página
+  document.addEventListener('astro:before-preparation', applyTheme);
+  document.addEventListener('astro:after-preparation', applyTheme);
+  document.addEventListener('astro:before-swap', applyTheme);
+  document.addEventListener('astro:after-swap', applyTheme);
+</script> 

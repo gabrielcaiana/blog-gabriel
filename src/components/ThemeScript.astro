@@ -1,0 +1,22 @@
+<script>
+  // Função para aplicar o tema
+  function applyTheme() {
+    const theme = localStorage.getItem('theme') || 
+      (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    
+    if (theme === 'dark') {
+      document.documentElement.setAttribute('data-theme', 'dark');
+    } else {
+      document.documentElement.removeAttribute('data-theme');
+    }
+  }
+
+  // Aplicar o tema inicial
+  applyTheme();
+
+  // Aplicar o tema após cada transição de página
+  document.addEventListener('astro:page-load', applyTheme);
+  
+  // Aplicar o tema após o carregamento do DOM
+  document.addEventListener('DOMContentLoaded', applyTheme);
+</script> 

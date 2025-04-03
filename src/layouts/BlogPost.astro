@@ -11,6 +11,7 @@ type Props = CollectionEntry<"blog">["data"] & { heroWidth?: number, heroHeight?
 const { title, description, pubDate, updatedDate, heroImage, heroWidth = 1020, heroHeight = 520 } = Astro.props;
 ---
 
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <BaseHead title={title} description={description} image={heroImage} />
@@ -35,7 +36,7 @@ const { title, description, pubDate, updatedDate, heroImage, heroWidth = 1020, h
         max-width: calc(100% - 2em);
         margin: auto;
         padding: 1em;
-        color: rgb(var(--gray-dark));
+        color: var(--text);
       }
       .title {
         margin-bottom: 1em;
@@ -45,13 +46,18 @@ const { title, description, pubDate, updatedDate, heroImage, heroWidth = 1020, h
       }
       .title h1 {
         margin: 0 0 0.5em 0;
+        color: var(--text-heading);
       }
       .date {
         margin-bottom: 0.5em;
-        color: rgb(var(--gray));
+        color: var(--text);
       }
       .last-updated-on {
         font-style: italic;
+      }
+      hr {
+        border: none;
+        border-top: 1px solid rgba(var(--gray), 0.2);
       }
     </style>
   </head>
