@@ -89,7 +89,7 @@
   /**
    * @param {'light' | 'dark'} theme - O tema a ser aplicado
    */
-  function applyTheme(theme) {
+  function applyTheme(theme: 'light' | 'dark') {
     document.documentElement.setAttribute('data-theme', theme);
     localStorage.setItem('theme', theme);
   }
