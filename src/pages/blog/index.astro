@@ -108,7 +108,7 @@ const sortedPosts = posts.sort(
                   <Image
                     width={720}
                     height={360}
-                    src={post.data.heroImage}
+                    src={post.data.heroImage || "/placeholder.jpg"}
                     alt={post.data.title}
                     loading={"eager"}
                   />
