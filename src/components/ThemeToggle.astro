@@ -86,13 +86,12 @@
 </style>
 
 <script>
-  // Função para aplicar o tema
+  /**
+   * @param {'light' | 'dark'} theme - O tema a ser aplicado
+   */
   function applyTheme(theme) {
-    if (theme === 'dark') {
-      document.documentElement.setAttribute('data-theme', 'dark');
-    } else {
-      document.documentElement.removeAttribute('data-theme');
-    }
+    document.documentElement.setAttribute('data-theme', theme);
+    localStorage.setItem('theme', theme);
   }
 
   // Função para alternar o tema

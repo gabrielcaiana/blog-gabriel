@@ -107,10 +107,9 @@ const sortedPosts = posts.sort(
                   <Image
                     width={720}
                     height={360}
-                    src={post.data.heroImage!}
+                    src={post.data.heroImage}
                     alt={post.data.title}
-                    formats={["avif", "webp"]}
-                    loading={index === 0 ? "eager" : "lazy"}
+                    loading={"eager"}
                   />
                   <h4 class="title">{post.data.title}</h4>
                   <p class="date">
