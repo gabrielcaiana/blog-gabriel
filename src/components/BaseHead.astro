@@ -11,6 +11,77 @@ interface Props {
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
 const { title, description, image = "/thumbnail.png" } = Astro.props;
+
+const generateStructuredData = () => {
+  const baseUrl = Astro.site?.toString() || "https://gabrielcaiana.com";
+  const currentUrl = Astro.url.toString();
+  const isBlogPost = currentUrl.includes("/blog/");
+
+  const personSchema = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: "Gabriel Caiana",
+    url: baseUrl,
+    sameAs: [
+      "https://github.com/gabrielcaiana",
+      "https://twitter.com/gabriel_caiana",
+      "https://www.linkedin.com/in/gabrielcaiana",
+    ],
+    jobTitle: "Software Engineer",
+    worksFor: {
+      "@type": "Organization",
+      name: "Frontend Developer",
+    },
+    description:
+      "Desenvolvedor Front-end especializado em Vue, Nuxt e TypeScript, com experiência em arquiteturas escaláveis e otimização de performance.",
+  };
+
+  const websiteSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: "Gabriel Caiana | Frontend Engineer",
+    url: baseUrl,
+    description:
+      "Blog pessoal sobre desenvolvimento frontend, Vue.js, Nuxt.js, TypeScript e arquitetura de software.",
+    author: {
+      "@type": "Person",
+      name: "Gabriel Caiana",
+    },
+  };
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: baseUrl,
+      },
+    ],
+  };
+
+  if (isBlogPost) {
+    const postSlug = currentUrl.split("/").pop();
+    breadcrumbSchema.itemListElement.push({
+      "@type": "ListItem",
+      position: 2,
+      name: "Blog",
+      item: `${baseUrl}/blog`,
+    });
+    breadcrumbSchema.itemListElement.push({
+      "@type": "ListItem",
+      position: 3,
+      name: title,
+      item: currentUrl,
+    });
+  }
+
+  return [personSchema, websiteSchema, breadcrumbSchema];
+};
+
+const structuredData = generateStructuredData();
 ---
 
 <ThemeManager />
@@ -23,6 +94,13 @@ const { title, description, image = "/thumbnail.png" } = Astro.props;
 <meta name="author" content="Gabriel Caiana" />
 <meta name="robots" content="index, follow" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
+
+<!-- Structured Data -->
+{
+  structuredData.map(schema => (
+    <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+  ))
+}
 
 <!-- Font preloads -->
 <link
@@ -74,9 +152,16 @@ const { title, description, image = "/thumbnail.png" } = Astro.props;
 
 <!-- Clarity -->
 <script is:inline type="text/javascript">
-  (function(c,l,a,r,i,t,y){
-    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+  (function (c, l, a, r, i, t, y) {
+    c[a] =
+      c[a] ||
+      function () {
+        (c[a].q = c[a].q || []).push(arguments);
+      };
+    t = l.createElement(r);
+    t.async = 1;
+    t.src = "https://www.clarity.ms/tag/" + i;
+    y = l.getElementsByTagName(r)[0];
+    y.parentNode.insertBefore(t, y);
   })(window, document, "clarity", "script", "lq7q6q6q6q");
 </script>

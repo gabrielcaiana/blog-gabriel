@@ -6,15 +6,57 @@ import Footer from "../components/Footer.astro";
 import FormattedDate from "../components/FormattedDate.astro";
 import ViewTransitions from "astro/components/ViewTransitions.astro";
 
-type Props = CollectionEntry<"blog">["data"] & { heroWidth?: number, heroHeight?: number};
+type Props = CollectionEntry<"blog">["data"] & {
+  heroWidth?: number;
+  heroHeight?: number;
+};
 
-const { title, description, pubDate, updatedDate, heroImage, heroWidth = 1020, heroHeight = 520 } = Astro.props;
+const {
+  title,
+  description,
+  pubDate,
+  updatedDate,
+  heroImage,
+  heroWidth = 1020,
+  heroHeight = 520,
+} = Astro.props;
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  headline: title,
+  description: description,
+  image: heroImage ? new URL(heroImage, Astro.site).toString() : undefined,
+  author: {
+    "@type": "Person",
+    name: "Gabriel Caiana",
+    url: Astro.site?.toString(),
+  },
+  publisher: {
+    "@type": "Person",
+    name: "Gabriel Caiana",
+    logo: {
+      "@type": "ImageObject",
+      url: new URL("/favicon.png", Astro.site).toString(),
+    },
+  },
+  datePublished: pubDate.toISOString(),
+  dateModified: updatedDate?.toISOString() || pubDate.toISOString(),
+  mainEntityOfPage: {
+    "@type": "WebPage",
+    "@id": Astro.url.toString(),
+  },
+};
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <BaseHead title={title} description={description} image={heroImage} />
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify(articleSchema)}
+    />
     <ViewTransitions />
     <style>
       main {
@@ -69,7 +111,12 @@ const { title, description, pubDate, updatedDate, heroImage, heroWidth = 1020, h
         <div class="hero-image">
           {
             heroImage && (
-              <img width={heroWidth} height={heroHeight} src={heroImage} alt="imagem principal do site" />
+              <img
+                width={heroWidth}
+                height={heroHeight}
+                src={heroImage}
+                alt="imagem principal do site"
+              />
             )
           }
         </div>
