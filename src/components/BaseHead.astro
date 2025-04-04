@@ -39,7 +39,7 @@ const generateStructuredData = () => {
   const websiteSchema = {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    name: "Gabriel Caiana | Frontend Engineer",
+    name: "Gabriel Caiana | Software Engineer",
     url: baseUrl,
     description:
       "Blog pessoal sobre desenvolvimento frontend, Vue.js, Nuxt.js, TypeScript e arquitetura de software.",
@@ -63,7 +63,6 @@ const generateStructuredData = () => {
   };
 
   if (isBlogPost) {
-    const postSlug = currentUrl.split("/").pop();
     breadcrumbSchema.itemListElement.push({
       "@type": "ListItem",
       position: 2,
@@ -85,6 +84,8 @@ const structuredData = generateStructuredData();
 ---
 
 <ThemeManager />
+
+<title set:html={title} />
 
 <!-- Global Metadata -->
 <meta charset="utf-8" />
@@ -125,7 +126,6 @@ const structuredData = generateStructuredData();
 <link rel="preconnect" href="https://www.clarity.ms" crossorigin />
 
 <!-- Primary Meta Tags -->
-<title>{title}</title>
 <meta name="title" content={title} />
 <meta name="description" content={description} />
 
